@@ -76,20 +76,23 @@ public class Pantalla extends GraphicsProgram {
 			/*
 			 * Matar. Erroni...
 			 */
-
+			//Reseguir array bales
 			for (Bala tir : bales) {
+				//Moure bala
 				tir.moure(-20);
+				//recorre totes les naus enemigues si alguna xoca amb la nau morta
 				for (int i = 0; i < enemigues.size(); i++) {
-					mort = tir.matar(tir.retornarX(), tir.retornarY());
+					//Comprovar si mata enviant la posicio de la nau
+					mort = tir.matar(enemigues.get(i).getRectangle());
 					if (mort == true) {
 						System.out.println(mort);
-						if (enemigues.get(i).getImatge().getX() <= tir
-								.retornarX()
-								&& enemigues.get(i).getImatge().getX() >= tir
+						/*if (enemigues.get(i).getImatge().getX() <= tir.retornarX() 	&& enemigues.get(i).getImatge().getX() >= tir
 										.retornarX()
-										+ tir.getImatge().getWidth()) {
-							enemigues.remove(i);
-						}
+										+ tir.getImatge().getWidth()) {*/
+						remove(enemigues.get(i).getImatge());	
+						enemigues.remove(i);
+							
+						//}
 					}
 				}
 

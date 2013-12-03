@@ -1,5 +1,7 @@
 package cat.juli.marcianitos;
 
+import acm.graphics.GRectangle;
+
 public class Bala extends Objecte {
 
 	public Bala(double d, double e) {
@@ -15,15 +17,10 @@ public class Bala extends Objecte {
 	 * Rep on es troba la bala en aquell moment
 	 * ERRONI!!!
 	 */
-	public boolean matar(double x, double y){
-		double xBala = imatge.getX();
-		double yBala = imatge.getY();
-		double ampladaBala = imatge.getWidth();
-		double alcadaBala = imatge.getHeight();
-		if(x>=xBala && x<=xBala+ampladaBala){
-			return true;
-		}
-		return false;
+	public boolean matar(GRectangle nau){
+		
+		return getRectangle().intersects(nau);
+		
 		
 	}
 

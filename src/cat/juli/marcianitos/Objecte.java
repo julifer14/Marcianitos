@@ -1,6 +1,7 @@
 package cat.juli.marcianitos;
 
 import acm.graphics.GImage;
+import acm.graphics.GRectangle;
 
 public class Objecte {
 	GImage imatge;
@@ -9,6 +10,10 @@ public class Objecte {
 		this.imatge = new GImage(img, d, e);
 		
 
+	}
+	
+	public GRectangle getRectangle(){
+		return imatge.getBounds();
 	}
 	
 	public GImage getImatge(){
